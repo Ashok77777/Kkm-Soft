@@ -1,0 +1,39 @@
+<mat-toolbar class="top-menu">
+    <span><strong>Login</strong></span>
+
+    <span class="fill-space"></span>
+
+</mat-toolbar>
+<form [formGroup]="_service.loginForm" class="normal-form">
+    <mat-grid-list cols="1" rowHeight="300px">
+        <mat-grid-tile>
+            <div class="controls-container">
+              
+                <mat-form-field>
+                    <input formControlName="email" matInput placeholder="Email *" autocomplete="off">
+                <mat-error>Enter Correct Email Id</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="password" formControlName="password" matInput placeholder="Password *" autocomplete="off">
+                    <mat-error>Password is incorrect</mat-error>
+                </mat-form-field>
+             
+
+            </div>
+
+
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-toolbar>
+
+
+        <span class="fill-space"></span>
+        <div class="button-row">
+            <button color="primary" mat-raised-button [disabled]="!_service.loginForm.valid" (click)="onSubmit()">
+                Login
+            </button>
+        
+        </div>
+    </mat-toolbar>
+</form>

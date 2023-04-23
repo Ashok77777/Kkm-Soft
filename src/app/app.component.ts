@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'kkmsoftproject';
+
+  togglenav(nav:any)
+  {
+    if(nav.opened)
+    {
+      nav.close();
+    }
+    else{ 
+      nav.open();
+    }
+
+  }
 }
